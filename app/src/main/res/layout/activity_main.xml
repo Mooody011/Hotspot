@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="مدير الهوت سبوت"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="راقب الأجهزة المتصلة، وحدد وقت لكل جهاز، وهيبعتلك تنبيه لما وقته يخلص."
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary" />
+
+        <!-- حالة نقطة الاتصال -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_hero"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvHotspotStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="حالة نقطة الاتصال: غير معروفة"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tvConnectedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="الأجهزة المتصلة دلوقتي: 0"
+                android:textSize="16sp"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:id="@+id/tvMonitoringStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="المراقبة: واقفة"
+                android:textSize="14sp"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOpenSettings"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="فتح إعدادات نقطة الاتصال"
+            android:textSize="16sp"
+            app:backgroundTint="@color/primary"
+            app:cornerRadius="14dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartMonitor"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:text="بدء المراقبة"
+            android:textSize="15sp"
+            app:backgroundTint="@color/surface"
+            app:cornerRadius="14dp"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp"
+            android:textColor="@color/text_primary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStopMonitor"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:text="إيقاف المراقبة"
+            android:visibility="gone"
+            android:textSize="15sp"
+            app:backgroundTint="@color/surface"
+            app:cornerRadius="14dp"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp"
+            android:textColor="@color/text_primary" />
+
+        <!-- مؤقت إيقاف نقطة الاتصال -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="مؤقت إيقاف نقطة الاتصال"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="لما الوقت يخلص هيبعتلك تنبيه، وانت تقفل نقطة الاتصال من الإعدادات."
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <Spinner
+                android:id="@+id/spAutoOff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvAutoOffStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="مفيش مؤقت إيقاف شغال"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSetAutoOff"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:text="تفعيل مؤقت الإيقاف"
+                app:backgroundTint="@color/primary_light"
+                app:cornerRadius="12dp"
+                android:textColor="@color/primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelAutoOff"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:text="إلغاء مؤقت الإيقاف"
+                android:visibility="gone"
+                app:backgroundTint="@color/surface"
+                app:cornerRadius="12dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                android:textColor="@color/text_primary" />
+        </LinearLayout>
+
+        <!-- أقصى عدد أجهزة -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="عدد الأجهزة المسموح"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/tvMaxClients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="أقصى عدد أجهزة الموبايل: غير معروف على جهازك"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary" />
+
+            <Spinner
+                android:id="@+id/spDesiredMax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="العدد ده للعرض والتنبيه بس — التطبيق ميقدرش يفرضه، فرضه من إعدادات نقطة الاتصال بتاعة النظام."
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+
+        <!-- إخفاء اسم الشبكة -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="إخفاء اسم الشبكة"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="إخفاء اسم الشبكة (SSID) بيتعمل من إعدادات نقطة الاتصال بتاعة النظام، عشان التطبيق ميقدرش يغيّر إعدادات نقطة الاتصال بنفسه."
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpenSettingsHidden"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:text="فتح إعدادات نقطة الاتصال لإخفاء الشبكة"
+                app:backgroundTint="@color/primary_light"
+                app:cornerRadius="12dp"
+                android:textColor="@color/primary" />
+        </LinearLayout>
+
+        <!-- الأجهزة المتصلة -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="الأجهزة المتصلة"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary" />
+
+        <TextView
+            android:id="@+id/tvMonitoringNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="المراقبة واقفة — دوس «بدء المراقبة» وشغّل نقطة الاتصال عشان تشوف الأجهزة الحالية."
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary" />
+
+        <TextView
+            android:id="@+id/tvNoDevices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="مفيش أجهزة متصلة دلوقتي."
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDevices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="مدير الهوت سبوت — الإصدار 1.0\nمراقبة وتنبيه بس: التطبيق ميقدرش يطرد جهاز متصل ولا يشغّل نقطة اتصال إنترنت بنفسه، دي صلاحيات النظام."
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
