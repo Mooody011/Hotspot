@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- نظام ألوان واحد لكل التطبيق، على ستايل Prayer Now:
+     أخضر غامق + دهبي + أوف وايت. ممنوع أي لون برّه القايمة دي. -->
+<resources>
+    <color name="primary">#0C5B44</color>
+    <color name="primary_dark">#083F30</color>
+    <color name="primary_light">#E6F2ED</color>
+    <color name="gold">#C19A3D</color>
+    <color name="gold_light">#F5EEDD</color>
+    <color name="background">#FAF8F3</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#1C2B26</color>
+    <color name="text_secondary">#6E7B74</color>
+    <color name="divider">#E8E4DA</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>
