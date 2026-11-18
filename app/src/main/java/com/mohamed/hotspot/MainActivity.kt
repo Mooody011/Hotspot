@@ -200,7 +200,9 @@ class MainActivity : AppCompatActivity(), DeviceAdapter.Listener {
 
     private fun openTetherSettings() {
         try {
-            startActivity(Intent(Settings.ACTION_TETHER_SETTINGS))
+            // Settings.ACTION_TETHER_SETTINGS مش موجود في الـ SDK العام،
+            // فبنستخدم قيمة الأكشن نفسها كنص.
+            startActivity(Intent("android.settings.TETHER_SETTINGS"))
         } catch (_: Exception) {
             try {
                 startActivity(Intent(Settings.ACTION_WIRELESS_SETTINGS))

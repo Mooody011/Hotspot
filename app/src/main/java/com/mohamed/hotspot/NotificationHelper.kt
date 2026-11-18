@@ -6,7 +6,6 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import android.provider.Settings
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
@@ -67,7 +66,7 @@ object NotificationHelper {
         createChannels(context)
         val openSettings = PendingIntent.getActivity(
             context, 0,
-            Intent(Settings.ACTION_TETHER_SETTINGS),
+            Intent("android.settings.TETHER_SETTINGS"),
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
         val notification = NotificationCompat.Builder(context, CHANNEL_BLOCKED)
@@ -90,7 +89,7 @@ object NotificationHelper {
         createChannels(context)
         val openSettings = PendingIntent.getActivity(
             context, 0,
-            Intent(Settings.ACTION_TETHER_SETTINGS),
+            Intent("android.settings.TETHER_SETTINGS"),
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
         val notification = NotificationCompat.Builder(context, CHANNEL_DEVICE_TIME)
